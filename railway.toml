@@ -2,8 +2,9 @@
 builder = "dockerfile"
 
 [deploy]
-healthcheckPath = "/healthz"
-healthcheckTimeout = 300
+# Disable health check - the wrapper handles its own health
+healthcheckPath = "/"
+healthcheckTimeout = 600
 restartPolicyType = "on_failure"
 
 # Require a persistent volume mounted at /data (Railway).
